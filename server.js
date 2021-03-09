@@ -1,3 +1,6 @@
+require('custom-env').env()
+
+
 // Listen on a specific host via the HOST environment variable
 var host = process.env.HOST || '0.0.0.0';
 // Listen on a specific port via the PORT environment variable
@@ -9,6 +12,10 @@ var port = process.env.PORT || 8080;
 // use originWhitelist instead.
 var originBlacklist = parseEnvList(process.env.CORSANYWHERE_BLACKLIST);
 var originWhitelist = parseEnvList(process.env.CORSANYWHERE_WHITELIST);
+console.log("Origin Black List")
+console.log(originBlacklist);
+console.log("Origin White List");
+console.log(originWhitelist)
 function parseEnvList(env) {
   if (!env) {
     return [];
